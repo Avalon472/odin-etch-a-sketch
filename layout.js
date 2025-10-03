@@ -1,5 +1,5 @@
 const DEFAULT_SIZE = 16;
-const DEFAULT_COLOR = '#63aec5ff';
+const DEFAULT_COLOR = '#000000';
 
 let currentSize = DEFAULT_SIZE
 let currentColor = DEFAULT_COLOR
@@ -9,6 +9,7 @@ const resetButton = document.getElementById("clearButton")
 const borderButton = document.getElementById("borderToggle")
 const sizeSlider = document.getElementById("gridSize")
 const sizeText = document.getElementById("sizeText")
+const colorSelect = document.getElementById("colorSelect")
 
 let isMouseDown = false;
 document.body.addEventListener("mousedown", e => isMouseDown = true);
@@ -17,6 +18,7 @@ document.body.addEventListener("mouseup", e => isMouseDown = false);
 resetButton.addEventListener("click", reset)
 sizeSlider.addEventListener("input", e => resizeGrid(parseInt(e.target.value)))
 borderButton.addEventListener("click", toggleBorder)
+colorSelect.addEventListener("input", e => currentColor = e.target.value)
 
 function createGrid(){
 
@@ -48,7 +50,7 @@ function colorIn(e){
 function resizeGrid(size){
     currentSize = size;
     reset();
-    sizeText.textContent = `${size} x ${size}`;
+    sizeText.textContent = `Grid Size: ${size} x ${size}`;
 }
 
 function toggleBorder(){
