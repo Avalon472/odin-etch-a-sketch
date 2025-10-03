@@ -11,26 +11,24 @@ body{
     display: flex;
     gap: 50px;
     margin: 50px;
+    justify-content: center;
 }
 #Drawspace{
     background-color: beige;
-    height: 75%;
-    width: 75%;
+    height: 750px;
+    width: 750px;
+    display: grid;
+    user-select: none;
+}
+#buttons{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
+    flex-direction: column;
 }
 
-.row{
-    display:flex;
-    flex-direction: column;
-    gap:3px;
-}
 .pixel{
     background-color: aquamarine;
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
+}
+
+.hasBorder{
+    border:1px solid black;
 }
